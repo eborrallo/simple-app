@@ -3,7 +3,7 @@ version: "3.2"
 services:
   app:
     build:
-      context: .
+      dockerfile: Dockerfile.app
     volumes:
       - log-data:/app/logs
     ports:
@@ -11,7 +11,7 @@ services:
 
   filebeat:
     build:
-      context: ./filebeat
+      dockerfile: Dockerfile.filebeat
     volumes:
       - log-data:/var/log/server
     networks:
